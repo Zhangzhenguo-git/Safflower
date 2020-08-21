@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btViewModel"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="ViewModel"
+            app:layout_constraintBottom_toTopOf="@+id/btLiveData"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.553"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <Button
+            android:id="@+id/btLiveData"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="452dp"
+            android:text="LiveData"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+
+        <Button
+            android:id="@+id/btNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="336dp"
+            android:text="Navigation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="-16dp" />
+
+        <Button
+            android:id="@+id/btRoom"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Room"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/btNavigation"
+            android:layout_marginTop="20dp">
+        </Button>
+        <Button
+            android:id="@+id/btLifecy"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Lifecy"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/btRoom"
+            android:layout_marginTop="20dp">
+        </Button>
+        <Button
+            android:id="@+id/btPaging"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Paging"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/btLifecy"
+            android:layout_marginTop="20dp">
+        </Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

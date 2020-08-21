@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ikunFragment">
+
+    <fragment
+        android:id="@+id/ikunFragment"
+        android:name="com.z.jetpackdemo_master.navdemo.fragment.IkunFragment"
+        android:label="ikun_fragment"
+        tools:layout="@layout/ikun_fragment" />
+    <fragment
+        android:id="@+id/jarFragmen"
+        android:name="com.z.jetpackdemo_master.navdemo.fragment.JarFragment"
+        android:label="jar_fragment"
+        tools:layout="@layout/jar_fragment" />
+</navigation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="loadIng">加载中......</string>
+    <string name="loadFin">加载错误</string>
+    <string name="loadError">加载失败</string>
+    <string name="loadiEmpty">加载数据为空</string>
+</resources>

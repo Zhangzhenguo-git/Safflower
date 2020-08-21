@@ -1,0 +1,4 @@
+include ':statelayout'
+include ':jetpack'
+include ':app'
+rootProject.name = "Safflower"

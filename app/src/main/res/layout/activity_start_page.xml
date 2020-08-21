@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".StartPageActivity">
+        <ImageView
+            android:id="@+id/ivImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/start_page">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tvSkip"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/start_page_downtime_shape"
+            android:textStyle="bold"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="跳过(3)">
+        </TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
