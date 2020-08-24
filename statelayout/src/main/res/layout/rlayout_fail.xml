@@ -4,37 +4,39 @@
 
     </data>
     <RelativeLayout
-        android:id="@+id/loadIng"
+        android:id="@+id/fail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fff">
-        <ProgressBar
-            android:id="@+id/loadingIv"
+        <ImageView
+            android:id="@+id/failIv"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true">
-        </ProgressBar>
+            android:layout_centerVertical="true"
+            android:src="@drawable/loading_errr_or_fail">
+        </ImageView>
         <TextView
-            android:id="@+id/loadingTitle"
+            android:id="@+id/failTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="加载中"
+            android:text="加载错误，请重试"
             android:textSize="@dimen/db_statelayoutview_title_textsize"
-            android:layout_below="@id/loadingIv">
+            android:layout_below="@id/failIv">
         </TextView>
         <Button
-            android:id="@+id/btIng"
+            android:id="@+id/btFail"
             android:layout_width="@dimen/db_statelayoutview_bottom_width"
             android:layout_height="@dimen/db_statelayoutview_bottom_height"
-            android:text="取消加载"
+            android:text="重试"
             android:textColor="@android:color/white"
-            android:layout_below="@id/loadingTitle"
+            android:layout_below="@id/failTitle"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:textSize="@dimen/db_statelayoutview_bottom_textsize"
-            android:background="@drawable/bottom_backage_style">
+            android:background="@drawable/bottom_backage_style"
+            android:textSize="@dimen/db_statelayoutview_bottom_textsize">
+
         </Button>
     </RelativeLayout>
 
