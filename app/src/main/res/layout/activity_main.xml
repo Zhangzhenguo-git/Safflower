@@ -1,18 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </data>
+    <com.pack.statelayout.StateLayoutView
+        android:id="@+id/stateLayoutView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btSuc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="正常的"
+                />
+            <Button
+                android:id="@+id/btIng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载中的"
+                />
+            <Button
+                android:id="@+id/btFail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载失败的"
+                />
+            <Button
+                android:id="@+id/btError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载错误的"
+                />
+            <Button
+                android:id="@+id/btEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载空的"
+                />
+
+        </LinearLayout>
+    </com.pack.statelayout.StateLayoutView>
+</layout>

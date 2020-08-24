@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
 
     </data>
     <RelativeLayout
-        android:id="@+id/loadIng"
+        android:id="@+id/error"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fff">
-        <ProgressBar
-            android:id="@+id/loadingIv"
+
+        <ImageView
+            android:id="@+id/errorIv"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true">
-        </ProgressBar>
+            android:layout_centerVertical="true"
+            android:src="@drawable/loading_errr_or_fail"></ImageView>
+
         <TextView
-            android:id="@+id/loadingTitle"
+            android:id="@+id/errorTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/errorIv"
             android:layout_centerHorizontal="true"
-            android:text="加载中"
-            android:textSize="@dimen/db_statelayoutview_title_textsize"
-            android:layout_below="@id/loadingIv">
-        </TextView>
+            android:text="出错了，请稍后再试"
+            android:textSize="@dimen/db_statelayoutview_title_textsize"></TextView>
+
         <Button
-            android:id="@+id/btIng"
+            android:id="@+id/btError"
             android:layout_width="@dimen/db_statelayoutview_bottom_width"
             android:layout_height="@dimen/db_statelayoutview_bottom_height"
-            android:text="取消加载"
-            android:textColor="@android:color/white"
-            android:layout_below="@id/loadingTitle"
+            android:layout_below="@id/errorTitle"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:textSize="@dimen/db_statelayoutview_bottom_textsize"
-            android:background="@drawable/bottom_backage_style">
-        </Button>
+            android:background="@drawable/bottom_backage_style"
+            android:text="重试"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/db_statelayoutview_bottom_textsize"></Button>
     </RelativeLayout>
-
 </layout>
