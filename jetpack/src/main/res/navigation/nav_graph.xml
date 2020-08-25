@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/ikunFragment"
-        android:name="com.z.jetpackdemo_master.navdemo.fragment.IkunFragment"
+        android:name="com.pack.jetpack.navdemo.fragment.IkunFragment"
         android:label="ikun_fragment"
         tools:layout="@layout/ikun_fragment" />
     <fragment
         android:id="@+id/jarFragmen"
-        android:name="com.z.jetpackdemo_master.navdemo.fragment.JarFragment"
+        android:name="com.pack.jetpack.navdemo.fragment.JarFragment"
         android:label="jar_fragment"
         tools:layout="@layout/jar_fragment" />
 </navigation>

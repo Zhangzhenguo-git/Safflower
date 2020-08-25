@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/worksFragment"
-        android:name="com.z.jetpackdemo_master.room.WorksFragment"
+        android:name="com.pack.jetpack.room.WorksFragment"
         android:label="work_fragment"
         tools:layout="@layout/works_fragment">
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.z.jetpackdemo_master.room.AddFragment"
+        android:name="com.pack.jetpack.room.AddFragment"
         android:label="add_fragment"
         tools:layout="@layout/add_fragment">
         <action

@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 
 import com.pack.statelayout.databinding.RlayoutEmptyBinding;
@@ -27,7 +28,7 @@ import com.pack.statelayout.databinding.RlayoutLoadingBinding;
  * @Email 18311371235@163.com
  * @Describe
  */
-public class StateLayoutView extends RelativeLayout{
+public class StateLayoutView extends ConstraintLayout {
     private Context mContext;
     //默认，不显示任何的View
     private final int NORMAL = 0;

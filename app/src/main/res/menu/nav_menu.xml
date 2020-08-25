@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/navbuttom_homeicon"
+        android:title="@string/home"
+        />
+
+    <item
+        android:id="@+id/readFragment"
+        android:icon="@drawable/navbuttom_readicon"
+        android:title="@string/read"
+        />
+
+    <item
+        android:id="@+id/userFragment"
+        android:icon="@drawable/navbuttom_usericon"
+        android:title="@string/user"
+        />
+</menu>

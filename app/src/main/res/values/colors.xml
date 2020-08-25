@@ -6,4 +6,5 @@
     <color name="colorWhite">#fff</color>
     <color name="colorGray">#f0f0f0</color>
     <color name="colorParent">#00000000</color>
+    <color name="colorBottomNav">#e6e6e6</color>
 </resources>

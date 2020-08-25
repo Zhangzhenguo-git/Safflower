@@ -3,6 +3,8 @@ package com.pack.safflower.base
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.renderscript.ScriptGroup
@@ -46,13 +48,21 @@ abstract class BaseActivity_K: AppCompatActivity() {
      * @param requestCode 请求code，可以根据实际情况填写
      * 全局跳转
      */
-    fun baseStartActivity(context:Context,endClass:Class<Activity>,requestCode:Int){
+    fun baseStartActivity(context:Activity,endClass:Class<Activity>,requestCode:Int){
         var intent: Intent= Intent(context,endClass)
-        if (requestCode==null){
+        if (requestCode==-1){
             startActivity(intent)
+            context.finish()
         }else{
             startActivityForResult(intent,requestCode)
         }
 
+    }
+
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        //修改背景为白色
+        window.setBackgroundDrawable(ColorDrawable(Color.WHITE))
     }
 }

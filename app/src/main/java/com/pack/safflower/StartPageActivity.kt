@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.pack.safflower.base.BaseActivity_K
 import com.pack.safflower.databinding.ActivityStartPageBinding
+import com.pack.safflower.view.navigation.NaviActivity
 
 class StartPageActivity : BaseActivity_K() {
     lateinit var binding:ActivityStartPageBinding
@@ -23,12 +24,12 @@ class StartPageActivity : BaseActivity_K() {
         startPageHandler=object :Handler(){
             override fun handleMessage(msg: Message) {
                 super.handleMessage(msg)
-                baseStartActivity(this@StartPageActivity,MainActivity().javaClass,0)
+                baseStartActivity(this@StartPageActivity,NaviActivity().javaClass,-1)
             }
         }
         runnable= object:Runnable {
             override fun run() {
-                baseStartActivity(this@StartPageActivity,MainActivity().javaClass,0)
+                baseStartActivity(this@StartPageActivity,NaviActivity().javaClass,-1)
             }
         }
     }

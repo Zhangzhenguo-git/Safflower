@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Safflower</string>
+
+
+    <string name="home">home</string>
+    <string name="read">read</string>
+    <string name="user">user</string>
 </resources>
