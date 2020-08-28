@@ -1,30 +1,34 @@
 package com.pack.safflower.view.navigation.fragment.user
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import com.pack.safflower.R
+import com.pack.safflower.base.BaseFragment_J
+import com.pack.safflower.databinding.UserFragmentBinding
 
-class UserFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = UserFragment()
-    }
-
-    private lateinit var viewModel: UserViewModel
-
+class UserFragment : BaseFragment_J() {
+    private lateinit var mViewModel: UserViewModel
+    private lateinit var binding: UserFragmentBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.user_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.user_fragment, container, false)
+        return binding.getRoot()
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun initViewModel() {
+        mViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
     }
 
+    override fun initData() {}
+    override fun initOnClick() {}
+
+    companion object {
+        fun newInstance(): UserFragment {
+            return UserFragment()
+        }
+    }
 }

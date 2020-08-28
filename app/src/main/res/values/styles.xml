@@ -5,8 +5,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <!--        解决启动页白屏-->
-        <item name="android:windowBackground">@mipmap/start_page</item>
+        <!--        解决启动页白屏最后解决-->
+<!--        <item name="android:windowBackground">@mipmap/start_page</item>-->
     </style>
 
 </resources>
