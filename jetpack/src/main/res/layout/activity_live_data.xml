@@ -4,7 +4,7 @@
 >
 
     <data>
-        <variable name="LiveData" type="com.pack.jetpack.LiveDataViewModel"></variable>
+        <variable name="LiveData" type="com.pack.jetpack.livedata.LiveDataViewModel"></variable>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

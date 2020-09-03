@@ -14,6 +14,11 @@
         />
 
     <item
+        android:id="@+id/whateverFragment"
+        android:icon="@drawable/navbuttom_whatevericon"
+        android:title="@string/whatever"
+        />
+    <item
         android:id="@+id/userFragment"
         android:icon="@drawable/navbuttom_usericon"
         android:title="@string/user"

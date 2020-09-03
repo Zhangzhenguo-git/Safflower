@@ -1,4 +1,4 @@
-package com.pack.jetpack;
+package com.pack.jetpack.livedata;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;

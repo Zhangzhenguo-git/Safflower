@@ -8,7 +8,7 @@
     <com.pack.statelayout.StateLayoutView xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.navigation.fragment.user.UserFragment">
+        tools:context=".view_viewmodel.navigation.fragment.user.UserFragment">
 
         <TextView
             android:layout_width="match_parent"

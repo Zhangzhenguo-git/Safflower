@@ -4,17 +4,17 @@
     <data>
 
     </data>
-
-    <com.pack.statelayout.StateLayoutView
-        xmlns:tools="http://schemas.android.com/tools"
+    <FrameLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view_viewmodel.navigation.fragment.read.ReadFragment">
+        tools:context=".view_viewmodel.navigation.fragment.home.tabfragment.RecommendFragment">
 
         <TextView
+            android:id="@+id/recommendFrag"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Hello" />
-    </com.pack.statelayout.StateLayoutView>
+            android:text="Fragment" />
+    </FrameLayout>
+
 
 </layout>

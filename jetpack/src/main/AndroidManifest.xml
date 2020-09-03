@@ -16,11 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".paging.PagingActivity" />
         <activity android:name=".LifeActivity" />
         <activity android:name=".room.RoomActivity" />
         <activity android:name=".navdemo.NavigationActivity" />
-        <activity android:name=".LiveDataActivity" />
+        <activity android:name=".livedata.LiveDataActivity" />
         <activity android:name=".viewmodeldemo.TestViewModelActivity" />
         <activity android:name=".normal.NormalActivity" />
     </application>

@@ -1,4 +1,4 @@
-package com.pack.safflower.view.navigation.fragment.user
+package com.pack.safflower.view_viewmodel.navigation.fragment.user
 
 import androidx.lifecycle.ViewModel
 

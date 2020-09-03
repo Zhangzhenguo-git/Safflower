@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment
  * @Email 18311371235@163.com
  * @Describe
  */
-abstract class BaseFragment:Fragment(){
+abstract class BaseFragment_K:Fragment(){
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -40,7 +40,6 @@ abstract class BaseFragment:Fragment(){
         }else{
             startActivityForResult(intent,requestCode)
         }
-
     }
 
 }

@@ -1,4 +1,4 @@
-package com.pack.safflower.view.navigation.fragment.read
+package com.pack.safflower.view_viewmodel.navigation.fragment.read
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.pack.safflower.R
 import com.pack.safflower.base.BaseFragment_J
-import com.pack.safflower.databinding.HomeFragmentBinding
 import com.pack.safflower.databinding.ReadFragmentBinding
 
 class ReadFragment : BaseFragment_J() {

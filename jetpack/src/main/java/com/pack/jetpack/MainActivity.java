@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.pack.jetpack.databinding.ActivityMainBinding;
+import com.pack.jetpack.livedata.LiveDataActivity;
 import com.pack.jetpack.navdemo.NavigationActivity;
 import com.pack.jetpack.paging.PagingActivity;
 import com.pack.jetpack.room.RoomActivity;

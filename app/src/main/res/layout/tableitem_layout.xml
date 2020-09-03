@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+
+    >
+
+    <data>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tabLayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="@dimen/dp_130"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_5">
+        <TextView
+            android:id="@+id/tabTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="精选"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"
+            android:textStyle="bold">
+        </TextView>
+        <TextView
+            android:id="@+id/tabMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tabTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="主力推荐"
+            android:textSize="@dimen/sp_10"
+            android:textColor="@color/colorBlack"
+            android:gravity="center">
+        </TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

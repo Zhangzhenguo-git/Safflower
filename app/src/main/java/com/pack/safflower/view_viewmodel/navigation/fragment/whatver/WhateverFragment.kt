@@ -1,4 +1,4 @@
-package com.pack.safflower.view.navigation.fragment.whatver
+package com.pack.safflower.view_viewmodel.navigation.fragment.whatver
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle

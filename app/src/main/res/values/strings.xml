@@ -2,7 +2,8 @@
     <string name="app_name">Safflower</string>
 
 
-    <string name="home">home</string>
-    <string name="read">read</string>
-    <string name="user">user</string>
+    <string name="home">首页</string>
+    <string name="read">阅读</string>
+    <string name="whatever">未知</string>
+    <string name="user">我的</string>
 </resources>

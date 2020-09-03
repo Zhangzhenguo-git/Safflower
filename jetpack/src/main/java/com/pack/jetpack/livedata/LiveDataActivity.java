@@ -1,4 +1,4 @@
-package com.pack.jetpack;
+package com.pack.jetpack.livedata;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.pack.jetpack.R;
 import com.pack.jetpack.databinding.ActivityLiveDataBinding;
 
 

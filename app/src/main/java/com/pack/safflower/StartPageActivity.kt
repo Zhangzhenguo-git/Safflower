@@ -1,16 +1,11 @@
 package com.pack.safflower
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.os.Handler
 import android.os.Message
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import com.pack.safflower.base.BaseActivity_K
 import com.pack.safflower.databinding.ActivityStartPageBinding
-import com.pack.safflower.view.navigation.NaviActivity
+import com.pack.safflower.view_viewmodel.navigation.NaviActivity
 
 class StartPageActivity : BaseActivity_K() {
     lateinit var binding:ActivityStartPageBinding
@@ -37,6 +32,6 @@ class StartPageActivity : BaseActivity_K() {
 
     override fun initClick() {
 //        startPageHandler.postDelayed(runnable,3000)
-        startPageHandler.sendEmptyMessageDelayed(0,3000)
+        startPageHandler.sendEmptyMessageDelayed(0,500)
     }
 }

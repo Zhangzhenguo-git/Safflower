@@ -12,7 +12,7 @@
         android:id="@+id/navStateLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view_viewmodel.navigation.NaviActivity">
+        tools:context=".view_viewmodel.navigation.NavActivity">
 
         <fragment
             android:id="@+id/naviFragment"
