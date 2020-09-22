@@ -15,6 +15,7 @@ import com.pack.banner.IndicatorView
 import com.pack.banner.ScaleInTransformer
 import com.pack.baselib.UIUtil
 import com.pack.safflower.R
+import com.pack.safflower.base.BaseFragment_J
 import com.pack.safflower.base.BaseFragment_K
 import com.pack.safflower.databinding.HomeFragmentBinding
 import com.pack.safflower.util.Utils
@@ -22,7 +23,7 @@ import com.pack.safflower.view_viewmodel.navigation.fragment.home.HomeViewModel.
 import com.pack.safflower.view_viewmodel.navigation.fragment.home.tab.RecommendFragment
 
 
-class HomeFragment:BaseFragment_K() {
+class HomeFragment: BaseFragment_J() {
     private lateinit var mViewModel: HomeViewModel
     private lateinit var binding: HomeFragmentBinding
     private var pagerS:MutableList<Fragment> = ArrayList()

@@ -7,9 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.pack.safflower.R
+import com.pack.safflower.base.BaseFragment_J
 import com.pack.safflower.base.BaseFragment_K
 
-class WhateverFragment : BaseFragment_K() {
+class WhateverFragment : BaseFragment_J() {
 
     companion object {
         fun newInstance() = WhateverFragment()

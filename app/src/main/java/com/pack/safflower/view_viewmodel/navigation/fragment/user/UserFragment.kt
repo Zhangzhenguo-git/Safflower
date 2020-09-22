@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.pack.safflower.R
+import com.pack.safflower.base.BaseFragment_J
 import com.pack.safflower.base.BaseFragment_K
 import com.pack.safflower.databinding.UserFragmentBinding
 
-class UserFragment : BaseFragment_K() {
+class UserFragment : BaseFragment_J() {
     private lateinit var mViewModel: UserViewModel
     private lateinit var binding: UserFragmentBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

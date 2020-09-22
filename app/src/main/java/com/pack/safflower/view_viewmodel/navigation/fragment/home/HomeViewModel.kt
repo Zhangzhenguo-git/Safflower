@@ -62,8 +62,8 @@ class HomeViewModel : BaseViewModel() {
         this.tabView = tabView
         tabBinding= DataBindingUtil.inflate(LayoutInflater.from(mActivity), R.layout.tableitem_layout, null, false)
         inflater= LayoutInflater.from(mActivity)
-        activeColor = mActivity.resources.getColor(R.color.colorRed)
-        normalColor = mActivity.resources.getColor(R.color.colorBlack)
+        activeColor = mActivity!!.resources.getColor(R.color.colorRed)
+        normalColor = mActivity!!.resources.getColor(R.color.colorBlack)
     }
 
     /**

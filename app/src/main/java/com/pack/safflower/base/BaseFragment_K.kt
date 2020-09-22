@@ -52,13 +52,11 @@ abstract class BaseFragment_K:Fragment(){
      * @return
      */
     fun checkNetworkOrWifi(): Boolean {
-        var isTrue = false
+        var isTrue = true
         val manager = mActivity!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE)
         val wifiNetwork = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI)
-        if (networkInfo != null && networkInfo.isConnected  && wifiNetwork!!.isConnected) {
-            isTrue=true
-        } else{
+        if (networkInfo != null && !networkInfo.isConnected  && !wifiNetwork!!.isConnected) {
             isTrue=false
         }
         return isTrue
