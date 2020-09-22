@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.pack.safflower.R
-import com.pack.safflower.base.BaseFragment_J
+import com.pack.safflower.base.BaseFragment_K
 import com.pack.safflower.databinding.ReadFragmentBinding
 
-class ReadFragment : BaseFragment_J() {
+class ReadFragment : BaseFragment_K() {
     private lateinit var mViewModel: ReadViewModel
     private lateinit var binding: ReadFragmentBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

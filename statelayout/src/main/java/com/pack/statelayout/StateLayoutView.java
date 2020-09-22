@@ -3,6 +3,7 @@ package com.pack.statelayout;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
+import android.os.ConditionVariable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;

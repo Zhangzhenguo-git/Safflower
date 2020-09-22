@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModel
  * @Describe
  */
 abstract class BaseViewModel:ViewModel(){
-    var mActivity: Activity = Activity();
+    var mActivity: Activity ?=null;
     /**
      * 设置当前上下文
      */

@@ -1,18 +1,16 @@
-package com.pack.safflower.view_viewmodel.navigation.fragment.home.tabfragment
+package com.pack.safflower.view_viewmodel.navigation.fragment.home.tab
 
-import android.database.DatabaseUtils
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.pack.safflower.R
-import com.pack.safflower.base.BaseFragment_J
+import com.pack.safflower.base.BaseFragment_K
 import com.pack.safflower.databinding.RecommendFragmentBinding
 
-class RecommendFragment : BaseFragment_J() {
+class RecommendFragment : BaseFragment_K() {
 
     companion object {
         fun newInstance() = RecommendFragment()

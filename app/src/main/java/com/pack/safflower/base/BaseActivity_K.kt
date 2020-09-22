@@ -5,12 +5,9 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.ConnectivityManager
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.renderscript.ScriptGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.BindingMethods
-import androidx.databinding.ViewDataBinding
 
 /**
  * @author Zhangzhenguo
@@ -20,8 +17,10 @@ import androidx.databinding.ViewDataBinding
  */
 abstract class BaseActivity_K: AppCompatActivity() {
 
+    var mActivity: Activity? =null;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        mActivity=this
         supportActionBar!!.hide()
         setContentView()
         initData()
@@ -60,6 +59,22 @@ abstract class BaseActivity_K: AppCompatActivity() {
 
     }
 
+    /**
+     * 检测网络变化
+     * @return
+     */
+    fun checkNetworkOrWifi(): Boolean {
+        var isTrue = false
+        val manager = mActivity!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE)
+        val wifiNetwork = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI)
+        if (networkInfo != null && networkInfo.isConnected  && wifiNetwork!!.isConnected) {
+            isTrue=true
+        } else{
+            isTrue=false
+        }
+        return isTrue
+    }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)

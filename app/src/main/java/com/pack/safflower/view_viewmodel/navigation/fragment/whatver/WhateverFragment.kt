@@ -7,8 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.pack.safflower.R
+import com.pack.safflower.base.BaseFragment_K
 
-class WhateverFragment : Fragment() {
+class WhateverFragment : BaseFragment_K() {
 
     companion object {
         fun newInstance() = WhateverFragment()
@@ -25,6 +26,18 @@ class WhateverFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(WhateverViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    override fun initViewModel() {
+        TODO("Not yet implemented")
+    }
+
+    override fun initData() {
+        TODO("Not yet implemented")
+    }
+
+    override fun initOnClick() {
+        TODO("Not yet implemented")
     }
 
 }

@@ -1,9 +1,11 @@
 package com.pack.safflower.base
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.ConnectivityManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 
@@ -15,8 +17,12 @@ import androidx.fragment.app.Fragment
  */
 abstract class BaseFragment_K:Fragment(){
 
+    lateinit var mActivity:Activity
+    protected var TAG:String=""
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        mActivity= this.requireActivity()
+        TAG=mActivity.packageName
         initViewModel();
         initData();
         initOnClick();
@@ -41,5 +47,20 @@ abstract class BaseFragment_K:Fragment(){
             startActivityForResult(intent,requestCode)
         }
     }
-
+    /**
+     * 检测网络变化
+     * @return
+     */
+    fun checkNetworkOrWifi(): Boolean {
+        var isTrue = false
+        val manager = mActivity!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE)
+        val wifiNetwork = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI)
+        if (networkInfo != null && networkInfo.isConnected  && wifiNetwork!!.isConnected) {
+            isTrue=true
+        } else{
+            isTrue=false
+        }
+        return isTrue
+    }
 }
