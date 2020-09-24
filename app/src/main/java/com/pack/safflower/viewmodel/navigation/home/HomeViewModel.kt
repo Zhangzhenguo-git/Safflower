@@ -1,13 +1,9 @@
-package com.pack.safflower.view_viewmodel.navigation.fragment.home
-
-import android.content.res.ColorStateList
+package com.pack.safflower.viewmodel.navigation.home
 import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.asynclayoutinflater.view.AsyncLayoutInflater
+import android.widget.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -24,14 +20,18 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.tabs.TabLayoutMediator.TabConfigurationStrategy
 import com.pack.safflower.R
+import com.pack.safflower.adapter.GridAdapter
 import com.pack.safflower.base.BaseViewModel
+import com.pack.safflower.databinding.GridItemBinding
 import com.pack.safflower.databinding.TableitemLayoutBinding
+import com.pack.safflower.model.home.GridData
 import com.pack.safflower.model.home.TableData
 import com.pack.safflower.model.home.impl.HomeModelImpl
 
-class HomeViewModel : BaseViewModel() {
+public class HomeViewModel : BaseViewModel() {
 
     var tabItemsLiveData: MutableLiveData<List<TableData>> = MutableLiveData()
+    var gridItemsLiveData: MutableLiveData<List<GridData>> = MutableLiveData()
     var homeModelImpl: HomeModelImpl = HomeModelImpl()
     var mediator: TabLayoutMediator? = null
     var tabView: TabLayout? = null
@@ -42,9 +42,8 @@ class HomeViewModel : BaseViewModel() {
     private var activeColor = 0
     private var normalColor = 0
 
-    lateinit var tabBinding:TableitemLayoutBinding
-    lateinit var inflater: LayoutInflater
-
+    lateinit var tabBinding: TableitemLayoutBinding
+    public lateinit var inflater: LayoutInflater
     /**
      * 获取tabItems持久性数据
      */
@@ -60,8 +59,8 @@ class HomeViewModel : BaseViewModel() {
      */
     fun setTabItem(tabView: TabLayout, tabItems: List<TableData>) {
         this.tabView = tabView
-        tabBinding= DataBindingUtil.inflate(LayoutInflater.from(mActivity), R.layout.tableitem_layout, null, false)
-        inflater= LayoutInflater.from(mActivity)
+        tabBinding = DataBindingUtil.inflate(LayoutInflater.from(mActivity), R.layout.tableitem_layout, null, false)
+        inflater = LayoutInflater.from(mActivity)
         activeColor = mActivity!!.resources.getColor(R.color.colorRed)
         normalColor = mActivity!!.resources.getColor(R.color.colorBlack)
     }
@@ -78,6 +77,7 @@ class HomeViewModel : BaseViewModel() {
             override fun getItemCount(): Int {
                 return pagerS.size
             }
+
             override fun createFragment(position: Int): Fragment {
                 return pagerS[position]
             }
@@ -87,13 +87,13 @@ class HomeViewModel : BaseViewModel() {
 //         用来自定义TablayoutItem,将tablayout与viewpage动态链接起来
         mediator = TabLayoutMediator(this.tabView!!, viewPager, TabConfigurationStrategy { tab, position ->
             tab.setCustomView(R.layout.tableitem_layout)
-            var tit:TextView=tab.customView!!.findViewById(R.id.tabTitle)
-            var msg:TextView=tab.customView!!.findViewById(R.id.tabMsg)
-            tit.text=items[position].tabTitle
-            tit.textSize=normalSize.toFloat()
+            var tit: TextView = tab.customView!!.findViewById(R.id.tabTitle)
+            var msg: TextView = tab.customView!!.findViewById(R.id.tabMsg)
+            tit.text = items[position].tabTitle
+            tit.textSize = normalSize.toFloat()
             tit.setTextColor(normalColor)
-            msg.text=items[position].tabMsg
-            msg.textSize=normalSize.toFloat()
+            msg.text = items[position].tabMsg
+            msg.textSize = normalSize.toFloat()
             msg.setTextColor(normalColor)
         })
         //要执行这一句才是真正将两者绑定起来
@@ -132,8 +132,30 @@ class HomeViewModel : BaseViewModel() {
         }
     }
 
+    /**
+     * 获取网格菜单数据
+     */
+    fun getGridItems(): MutableLiveData<List<GridData>> {
+        if (homeModelImpl.gridS != null && homeModelImpl.gridS.size > 0) {
+            gridItemsLiveData.value = homeModelImpl.gridS
+        }
+        return gridItemsLiveData
+    }
 
-    class ImageAdapter internal constructor(private val items: List<Int>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    /**
+     * 设置菜单适配器
+     */
+    fun setGridItemAndAdapter(gridItem: GridView, items: List<GridData>) {
+        inflater= LayoutInflater.from(mActivity)
+        val adapter: GridAdapter = GridAdapter(mActivity,items,gridItem)
+        gridItem.adapter=adapter
+        adapter.setOnGridItemListener(GridAdapter.OnGridItemLinstener {
+            System.out.println("执行"+it)
+        })
+    }
+
+
+    public class ImageAdapter internal constructor(private val items: List<Int>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
             val view: View = LayoutInflater.from(parent.context).inflate(R.layout.banner_item_image, parent, false)
             return ImageViewHolder(view)
@@ -168,5 +190,9 @@ class HomeViewModel : BaseViewModel() {
     fun unregisterOnPageChangeCallback() {
         mediator!!.detach();
         viewPager!!.unregisterOnPageChangeCallback(changeCallback)
+    }
+
+    fun setGridItemClick(view:GridView) {
+
     }
 }

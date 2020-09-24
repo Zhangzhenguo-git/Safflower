@@ -1,4 +1,4 @@
-package com.pack.safflower.view_viewmodel.navigation.fragment.home
+package com.pack.safflower.view.navigation.home
 
 import android.graphics.Color
 import android.os.Bundle
@@ -11,16 +11,18 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import com.pack.banner.IndicatorView
 import com.pack.banner.ScaleInTransformer
 import com.pack.baselib.UIUtil
 import com.pack.safflower.R
 import com.pack.safflower.base.BaseFragment_J
-import com.pack.safflower.base.BaseFragment_K
 import com.pack.safflower.databinding.HomeFragmentBinding
 import com.pack.safflower.util.Utils
-import com.pack.safflower.view_viewmodel.navigation.fragment.home.HomeViewModel.ImageAdapter
-import com.pack.safflower.view_viewmodel.navigation.fragment.home.tab.RecommendFragment
+import com.pack.safflower.view.navigation.home.tab.RecommendFragment
+import com.pack.safflower.viewmodel.navigation.home.HomeViewModel
 
 
 class HomeFragment: BaseFragment_J() {
@@ -46,6 +48,20 @@ class HomeFragment: BaseFragment_J() {
     }
 
     override fun initData() {
+        initBannerView()
+        initGridView()
+        initRecomment()
+
+    }
+
+    override fun initOnClick() {
+
+    }
+
+    /**
+     * banner
+     */
+    private fun initBannerView() {
         pagerS.add(RecommendFragment())
         pagerS.add(RecommendFragment())
         pagerS.add(RecommendFragment())
@@ -58,18 +74,6 @@ class HomeFragment: BaseFragment_J() {
                 mViewModel.setTabPageAdapter(binding.homeTabViewPage,pagerS,it, requireActivity().supportFragmentManager,lifecycle)
             }
         })
-
-    }
-
-    override fun initOnClick() {
-        initBannerView()
-
-    }
-
-    /**
-     * 实例化banner轮播
-     */
-    private fun initBannerView() {
         binding!!.homeBannerView.setAutoTurningTime(3000)
                 .setIndicator(IndicatorView(mActivity)
                         .setIndicatorColor(Color.WHITE)
@@ -83,21 +87,25 @@ class HomeFragment: BaseFragment_J() {
                     override fun onPageSelected(position: Int) {
                         Log.e(TAG, "initBanner2 onPageSelected $position")
                     }
-                }).adapter = ImageAdapter(Utils.getImage(6))
+                }).adapter = HomeViewModel.ImageAdapter(Utils.getImage(6))
     }
 
     /**
-     * 页面显示时加载当前页面状态
+     * 菜单
      */
-     override fun onResume() {
-         super.onResume()
-        System.out.println("执行home")
-         if (!checkNetworkOrWifi()){
-             binding.homeState.Builder()
-                     .showLoadFail()
-                     .setFailImgOrTitleOrBt(1,"网络连接已断开，请检查网络哦","去开启")
-         }
-     }
+    private fun initGridView(){
+        mViewModel.getGridItems().observe(this, Observer {
+            mViewModel.setGridItemAndAdapter(binding.homeGridView,it)
+        })
+    }
+
+    /**
+     * 推荐区域
+     */
+    private fun initRecomment(){
+        Glide.with(mActivity).load(R.mipmap.banner_icon1).apply(RequestOptions().transform(RoundedCorners(10))).into(binding.homeRecommendLeft)
+        Glide.with(mActivity).load(R.mipmap.banner_icon2).apply(RequestOptions().transform(RoundedCorners(10))).into(binding.homeRecommendRight)
+    }
 
     /**
      * 页面注销时移除viewpage回调

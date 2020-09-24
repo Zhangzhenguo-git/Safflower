@@ -1,4 +1,4 @@
-package com.pack.safflower.view_viewmodel.navigation.fragment.home.tab
+package com.pack.safflower.viewmodel.navigation.home.tab
 
 import androidx.lifecycle.ViewModel
 

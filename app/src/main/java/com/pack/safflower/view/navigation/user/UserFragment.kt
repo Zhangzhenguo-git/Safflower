@@ -1,4 +1,4 @@
-package com.pack.safflower.view_viewmodel.navigation.fragment.read
+package com.pack.safflower.view.navigation.user
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,28 +8,28 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.pack.safflower.R
 import com.pack.safflower.base.BaseFragment_J
-import com.pack.safflower.base.BaseFragment_K
-import com.pack.safflower.databinding.ReadFragmentBinding
+import com.pack.safflower.databinding.UserFragmentBinding
+import com.pack.safflower.viewmodel.navigation.user.UserViewModel
 
-class ReadFragment : BaseFragment_J() {
-    private lateinit var mViewModel: ReadViewModel
-    private lateinit var binding: ReadFragmentBinding
+class UserFragment : BaseFragment_J() {
+    private lateinit var mViewModel: UserViewModel
+    private lateinit var binding: UserFragmentBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.read_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.user_fragment, container, false)
         return binding.getRoot()
     }
 
     override fun initViewModel() {
-        mViewModel = ViewModelProviders.of(this).get(ReadViewModel::class.java)
+        mViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
     }
 
     override fun initData() {}
     override fun initOnClick() {}
 
     companion object {
-        fun newInstance(): ReadFragment {
-            return ReadFragment()
+        fun newInstance(): UserFragment {
+            return UserFragment()
         }
     }
 }

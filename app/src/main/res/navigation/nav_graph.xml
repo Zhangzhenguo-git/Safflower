@@ -7,26 +7,26 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.pack.safflower.view_viewmodel.navigation.fragment.home.HomeFragment"
+        android:name="com.pack.safflower.view.navigation.home.HomeFragment"
         android:label="home_fragment"
         tools:layout="@layout/home_fragment">
     </fragment>
     <fragment
         android:id="@+id/readFragment"
-        android:name="com.pack.safflower.view_viewmodel.navigation.fragment.read.ReadFragment"
+        android:name="com.pack.safflower.view.navigation.read.ReadFragment"
         android:label="read_fragment"
         tools:layout="@layout/read_fragment">
 
     </fragment>
     <fragment
         android:id="@+id/whateverFragment"
-        android:name="com.pack.safflower.view_viewmodel.navigation.fragment.whatver.WhateverFragment"
+        android:name="com.pack.safflower.view.navigation.whatver.WhateverFragment"
         android:label="whatver_fragment"
         tools:layout="@layout/whatever_fragment">
     </fragment>
     <fragment
         android:id="@+id/userFragment"
-        android:name="com.pack.safflower.view_viewmodel.navigation.fragment.user.UserFragment"
+        android:name="com.pack.safflower.view.navigation.user.UserFragment"
         android:label="yonghu"
         tools:layout="@layout/user_fragment">
     </fragment>

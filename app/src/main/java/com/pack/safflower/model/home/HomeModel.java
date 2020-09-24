@@ -10,4 +10,5 @@ import java.util.List;
  */
 public interface HomeModel {
     public List<TableData> getTabItems();
+    public List<GridData> getGridItems();
 }

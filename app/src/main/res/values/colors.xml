@@ -9,4 +9,5 @@
     <color name="colorParent">#00000000</color>
     <color name="colorBottomNav">#ffffff</color>
     <color name="colorRed">#FF1100</color>
+    <color name="transparent">#00000000</color>
 </resources>

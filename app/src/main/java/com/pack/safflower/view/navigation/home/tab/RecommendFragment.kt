@@ -1,4 +1,4 @@
-package com.pack.safflower.view_viewmodel.navigation.fragment.home.tab
+package com.pack.safflower.view.navigation.home.tab
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import com.pack.safflower.R
 import com.pack.safflower.base.BaseFragment_K
 import com.pack.safflower.databinding.RecommendFragmentBinding
+import com.pack.safflower.viewmodel.navigation.home.tab.RecommendViewModel
 
 class RecommendFragment : BaseFragment_K() {
 

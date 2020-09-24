@@ -1,14 +1,13 @@
-package com.pack.safflower.view_viewmodel.navigation.fragment.whatver
+package com.pack.safflower.view.navigation.whatver
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.pack.safflower.R
 import com.pack.safflower.base.BaseFragment_J
-import com.pack.safflower.base.BaseFragment_K
+import com.pack.safflower.viewmodel.navigation.whatver.WhateverViewModel
 
 class WhateverFragment : BaseFragment_J() {
 

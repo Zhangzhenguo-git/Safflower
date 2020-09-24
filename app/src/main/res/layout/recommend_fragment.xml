@@ -7,7 +7,7 @@
     <FrameLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view_viewmodel.navigation.fragment.home.tab.RecommendFragment">
+        tools:context=".viewmodel.navigation.home.tab.RecommendFragment">
 
         <TextView
             android:id="@+id/recommendFrag"

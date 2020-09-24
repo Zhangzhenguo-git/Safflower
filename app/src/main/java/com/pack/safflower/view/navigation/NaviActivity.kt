@@ -1,4 +1,4 @@
-package com.pack.safflower.view_viewmodel.navigation
+package com.pack.safflower.view.navigation
 
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
@@ -24,9 +24,17 @@ class NaviActivity : BaseActivity_K() {
 
     }
 
+    /**
+     * 页面显示时加载当前页面状态
+     */
     override fun onResume() {
         super.onResume()
-        println("执行navi1")
+        System.out.println("执行home")
+        if (!checkNetworkOrWifi()){
+            binding.homeState.Builder()
+                    .showLoadFail()
+                    .setFailImgOrTitleOrBt(1,"网络连接已断开，请检查网络哦","去开启")
+        }
     }
 
     override fun onResumeFragments() {
