@@ -44,6 +44,11 @@ public class StateLayoutView extends ConstraintLayout {
 
     private LayoutInflater mInflater;
 
+    private RlayoutLoadingBinding loadingBinding;
+    private RlayoutFailBinding failBinding;
+    private RlayoutErrorBinding errorBinding;
+    private RlayoutEmptyBinding emptyBinding;
+
     public StateLayoutView(Context context) {
         super(context);
         this.mContext=context;
@@ -67,14 +72,6 @@ public class StateLayoutView extends ConstraintLayout {
     }
 
     public class Builder{
-        private RlayoutLoadingBinding loadingBinding;
-        private RlayoutFailBinding failBinding;
-        private RlayoutErrorBinding errorBinding;
-        private RlayoutEmptyBinding emptyBinding;
-        public Builder Builder(){
-            return this;
-        }
-
         /**
          *加载中
          */

@@ -6,7 +6,11 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.net.NetworkInfo
+import android.os.Build
 import android.os.Bundle
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 
 /**
@@ -57,23 +61,6 @@ abstract class BaseActivity_K: AppCompatActivity() {
             startActivityForResult(intent,requestCode)
         }
 
-    }
-
-    /**
-     * 检测网络变化
-     * @return
-     */
-    fun checkNetworkOrWifi(): Boolean {
-        var isTrue = false
-        val manager = mActivity!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val networkInfo = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE)
-        val wifiNetwork = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI)
-        if (networkInfo != null && networkInfo.isConnected  && wifiNetwork!!.isConnected) {
-            isTrue=true
-        } else{
-            isTrue=false
-        }
-        return isTrue
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
